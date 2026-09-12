@@ -10,7 +10,7 @@ const linkRoutes=require('./routes/link');
 const clickRoutes=require('./routes/click');
 app.use(bodyParser.json());
 app.use(cors({
-    origin: 'http://localhost:5173',
+    origin: 'https://linkzip-kappa.vercel.app',
     credentials: true,
 }));
 app.use(cookieParser());

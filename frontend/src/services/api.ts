@@ -1,10 +1,10 @@
 import axios from "axios";
 
 export const api = axios.create({
-  baseURL: "http://localhost:3000/api",
+  baseURL: "https://server-iota-two-26.vercel.app/api",
   withCredentials: true,
 });
 export const publicApi = axios.create({
-  baseURL: "http://localhost:3000",
+  baseURL: "https://server-iota-two-26.vercel.app",
   withCredentials: true,
 });

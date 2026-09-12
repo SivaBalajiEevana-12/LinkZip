@@ -99,7 +99,7 @@ export default function LinkDetails() {
     );
   }
 
-  const shortUrl = `http://localhost:3000/c/${linkData.shortCode}`;
+  const shortUrl = `https://server-iota-two-26.vercel.app/c/${linkData.shortCode}`;
 
   return (
     <div className="min-h-screen bg-muted/30">

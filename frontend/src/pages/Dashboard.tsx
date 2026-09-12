@@ -41,7 +41,7 @@ export default function Dashboard() {
 
   const copyLink = (shortCode: string) => {
     navigator.clipboard.writeText(
-      `http://localhost:3000/c/${shortCode}`
+      `https://server-iota-two-26.vercel.app/c/${shortCode}`
     );
   };
 
@@ -114,7 +114,7 @@ export default function Dashboard() {
         <div className="space-y-4">
           {links.map((item) => {
             const shortUrl =
-              `http://localhost:3000/c/${item.shortCode}`;
+              `https://server-iota-two-26.vercel.app/c/${item.shortCode}`;
 
             return (
               <div

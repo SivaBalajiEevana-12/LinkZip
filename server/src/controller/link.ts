@@ -33,7 +33,7 @@ const createUrl = async (req: any, res: any) => {
         $inc: { totalLinks: 1 }
     });
 
-    const shortUrl = `http://localhost:3000/c/${shortCode}`;
+    const shortUrl = `https://server-iota-two-26.vercel.app/c/${shortCode}`;
 
     return res.status(201).json({
         message: "Link created successfully",
