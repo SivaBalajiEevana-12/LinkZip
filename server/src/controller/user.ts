@@ -41,12 +41,16 @@ const registerUser = async (req: any, res: any) => {
         await newUser.save();
 
         res.cookie("token", accessToken, {
+            sameSite:"none",
             httpOnly: true,
+            secure:true,
             maxAge: 15 * 60 * 1000
         });
 
         res.cookie("refreshToken", refreshToken, {
+             sameSite:"none",
             httpOnly: true,
+            secure:true,
             maxAge: 7 * 24 * 60 * 60 * 1000
         });
 
@@ -99,12 +103,16 @@ const loginUser = async (req: any, res: any) => {
         await user.save();
 
         res.cookie("token", accessToken, {
+             sameSite:"none",
             httpOnly: true,
+            secure:true,
             maxAge: 15 * 60 * 1000
         });
 
         res.cookie("refreshToken", refreshToken, {
+             sameSite:"none",
             httpOnly: true,
+            secure:true,
             maxAge: 7 * 24 * 60 * 60 * 1000
         });
 
@@ -148,7 +156,9 @@ const refreshToken = async (req: any, res: any) => {
         );
 
         res.cookie("token", accessToken, {
+             sameSite:"none",
             httpOnly: true,
+            secure:true,
             maxAge: 15 * 60 * 1000
         });
 

@@ -25,11 +25,15 @@ const registerUser = async (req, res) => {
         newUser.refreshToken = refreshToken;
         await newUser.save();
         res.cookie("token", accessToken, {
+            sameSite: "none",
             httpOnly: true,
+            secure: true,
             maxAge: 15 * 60 * 1000
         });
         res.cookie("refreshToken", refreshToken, {
+            sameSite: "none",
             httpOnly: true,
+            secure: true,
             maxAge: 7 * 24 * 60 * 60 * 1000
         });
         return res.status(201).json({
@@ -62,11 +66,15 @@ const loginUser = async (req, res) => {
         user.refreshToken = refreshToken;
         await user.save();
         res.cookie("token", accessToken, {
+            sameSite: "none",
             httpOnly: true,
+            secure: true,
             maxAge: 15 * 60 * 1000
         });
         res.cookie("refreshToken", refreshToken, {
+            sameSite: "none",
             httpOnly: true,
+            secure: true,
             maxAge: 7 * 24 * 60 * 60 * 1000
         });
         return res.status(200).json({
@@ -96,7 +104,9 @@ const refreshToken = async (req, res) => {
         }
         const accessToken = jwt.sign({ id: user._id }, process.env.JWT_SECRET, { expiresIn: "15m" });
         res.cookie("token", accessToken, {
+            sameSite: "none",
             httpOnly: true,
+            secure: true,
             maxAge: 15 * 60 * 1000
         });
         return res.status(200).json({
