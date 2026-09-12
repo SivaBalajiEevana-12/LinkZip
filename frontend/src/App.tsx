@@ -1,14 +1,12 @@
-import { useEffect, useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
+import { useEffect } from 'react'
+
 import './App.css'
 
 import Home from './pages/Home'
 import Login from './pages/Login'
 import {Route, Routes} from 'react-router-dom'
 import Register from './pages/Register'
-import Dashboard from './pages/DashBoard'
+import Dashboard from './pages/Dashboard'
 import LinkDetails from './pages/LinkDetails'
 import NotFound from './pages/NotFound'
 import CreateLink from './pages/CreateLink'

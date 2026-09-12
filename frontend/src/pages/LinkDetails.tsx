@@ -7,7 +7,7 @@ import {
 } from "lucide-react";
 
 import { api,publicApi } from "../services/api";
-import axios from "axios";
+// import axios from "axios";
 
 interface LinkData {
   _id: string;
