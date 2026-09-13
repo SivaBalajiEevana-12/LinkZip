@@ -4,6 +4,7 @@ const bcrypt = require("bcryptjs");
 
 const registerUser = async (req: any, res: any) => {
     try {
+        console.log("register");
         const { name, email, password, mobile } = req.body;
 
         const existingUser = await User.findOne({ email });
@@ -59,6 +60,7 @@ const registerUser = async (req: any, res: any) => {
         });
 
     } catch (error) {
+        console.log(error);
         return res.status(500).json({
             message: "Server error"
         });
@@ -66,6 +68,7 @@ const registerUser = async (req: any, res: any) => {
 };
 const loginUser = async (req: any, res: any) => {
     try {
+        console.log("/login");
         const { email, password } = req.body;
 
         const user = await User.findOne({ email });
@@ -121,6 +124,7 @@ const loginUser = async (req: any, res: any) => {
         });
 
     } catch (error) {
+        console.log(error);
         return res.status(500).json({
             message: "Server error"
         });

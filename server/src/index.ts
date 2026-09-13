@@ -26,6 +26,7 @@ db().then(()=>{
     console.log(err);
 })
 app.get('/', async (req:any,res:any)=>{
+    console.log("/get");
     const users= await User.find();
 
     return res.json(users);
