@@ -99,7 +99,7 @@ export default function LinkDetails() {
     );
   }
 
-  const shortUrl = `https://server-iota-two-26.vercel.app/c/${linkData.shortCode}`;
+  const shortUrl = ` https://linkzip-2.onrender.com/c/${linkData.shortCode}`;
 
   return (
     <div className="min-h-screen bg-muted/30">

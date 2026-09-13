@@ -6,7 +6,7 @@ export default function Redirect() {
 
   useEffect(() => {
     if (shortCode) {
-      window.location.href = `https://server-iota-two-26.vercel.app/c/${shortCode}`;
+      window.location.href = ` https://linkzip-2.onrender.com/c/${shortCode}`;
     }
   }, [shortCode]);
 
