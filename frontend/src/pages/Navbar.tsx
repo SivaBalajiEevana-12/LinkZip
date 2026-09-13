@@ -1,15 +1,20 @@
+import { useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Link2, LogOut } from "lucide-react";
 import { useDispatch, useSelector } from "react-redux";
 
 import type { AppDispatch, RootState } from "../stores/store";
-import { logoutUser } from "../stores/authSlice";
+import { getMe, logoutUser } from "../stores/authSlice";
 
 export default function Navbar() {
   const dispatch = useDispatch<AppDispatch>();
   const navigate = useNavigate();
 
   const user = useSelector((state: RootState) => state.auth.user);
+
+  useEffect(() => {
+    dispatch(getMe());
+  }, [dispatch]);
 
   const handleLogout = async () => {
     await dispatch(logoutUser());
@@ -19,13 +24,13 @@ export default function Navbar() {
   return (
     <nav className="border-b bg-background">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
-        
+
         <Link
           to="/"
           className="flex items-center gap-2 text-xl font-bold"
         >
           <Link2 className="h-5 w-5" />
-          TinyURL
+          LinkZip
         </Link>
 
         {user ? (
@@ -66,6 +71,7 @@ export default function Navbar() {
             </Link>
           </div>
         )}
+
       </div>
     </nav>
   );

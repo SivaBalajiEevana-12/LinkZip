@@ -11,8 +11,13 @@ const userRoutes = require('./routes/user');
 const linkRoutes = require('./routes/link');
 const clickRoutes = require('./routes/click');
 app.use(bodyParser.json());
+
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://linkzip-kappa.vercel.app",
+];
 app.use(cors({
-    origin: 'https://linkzip-kappa.vercel.app',
+    origin: allowedOrigins,
     credentials: true,
 }));
 app.use(cookieParser());

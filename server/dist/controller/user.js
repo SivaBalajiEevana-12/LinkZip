@@ -5,6 +5,7 @@ const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
 const registerUser = async (req, res) => {
     try {
+        console.log("register");
         const { name, email, password, mobile } = req.body;
         const existingUser = await User.findOne({ email });
         if (existingUser) {
@@ -41,6 +42,7 @@ const registerUser = async (req, res) => {
         });
     }
     catch (error) {
+        console.log(error);
         return res.status(500).json({
             message: "Server error"
         });
@@ -48,6 +50,7 @@ const registerUser = async (req, res) => {
 };
 const loginUser = async (req, res) => {
     try {
+        console.log("/login");
         const { email, password } = req.body;
         const user = await User.findOne({ email });
         if (!user) {
@@ -82,6 +85,7 @@ const loginUser = async (req, res) => {
         });
     }
     catch (error) {
+        console.log(error);
         return res.status(500).json({
             message: "Server error"
         });
