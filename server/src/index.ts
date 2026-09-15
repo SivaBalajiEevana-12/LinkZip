@@ -31,7 +31,7 @@ db().then(()=>{
 })
 app.get('/', async (req:any,res:any)=>{
     console.log("/get");
-    const users= {"message”:"welcome to link zip"};
+    const users= {message:"welcome to link zip"}
 
     return res.json(users);
 });
